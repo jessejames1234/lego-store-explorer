@@ -134,7 +134,8 @@ elif page == "Store Map":
         "CAN": [255, 207, 2, 200],
     })
     # Simplified map using st.map
-    st.map(df_map[["Latitude", "Longitude"]])
+    map_data = df_map[["Latitude", "Longitude"]].rename(columns={"Latitude": "latitude", "Longitude": "longitude"})
+    st.map(map_data)
     st.caption(f"Showing {len(df_map)} stores")
 
 # PAGE 3 – STATE ANALYSIS
